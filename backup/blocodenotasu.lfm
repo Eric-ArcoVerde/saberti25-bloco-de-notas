@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 402
+  Left = 390
   Height = 591
-  Top = 129
+  Top = 130
   Width = 769
   Caption = 'blocoDeNotasF'
   ClientHeight = 591
@@ -14,10 +14,15 @@ object Form1: TForm1
     Top = 0
     Width = 769
     Align = alClient
+    Font.Height = -16
+    Lines.Strings = (
+      'Memo1'
+    )
+    ParentFont = False
     TabOrder = 0
   end
   object MainMenu1: TMainMenu
-    Left = 712
+    Left = 709
     Top = 16
     object menuArq: TMenuItem
       Caption = 'Arquivo'
@@ -35,6 +40,7 @@ object Form1: TForm1
       end
       object menuImprimir: TMenuItem
         Caption = 'Imprimir'
+        OnClick = menuImprimirClick
       end
     end
     object menuEditar: TMenuItem
@@ -48,25 +54,45 @@ object Form1: TForm1
       end
       object menuFormatF: TMenuItem
         Caption = 'Formatar Fontes'
+        OnClick = menuFormatFClick
       end
+    end
+    object menuSair: TMenuItem
+      Caption = 'Sair'
+      OnClick = menuSairClick
     end
   end
   object OpenDialog1: TOpenDialog
-    Left = 715
+    FileName = 'C:\Users\professor\Documents\teste.txt'
+    Filter = 'Documentos de Texto (*.txt)|*.txt'
+    InitialDir = 'C:\Users\professor\Documents\'
+    Left = 709
     Top = 79
   end
   object SaveDialog1: TSaveDialog
-    Left = 720
+    Filter = 'Documento de text (*.txt)|*.txt'
+    Left = 709
     Top = 141
   end
-  object PageSetupDialog1: TPageSetupDialog
-    Left = 721
-    Top = 201
-  end
   object FontDialog1: TFontDialog
+    OnClose = FontDialog1Close
     MinFontSize = 0
     MaxFontSize = 0
-    Left = 720
-    Top = 266
+    Left = 709
+    Top = 208
+  end
+  object PrintDialog1: TPrintDialog
+    Left = 709
+    Top = 264
+  end
+  object FindDialog1: TFindDialog
+    OnFind = FindDialog1Find
+    Left = 709
+    Top = 328
+  end
+  object ReplaceDialog1: TReplaceDialog
+    Options = [frDown, frReplace, frReplaceAll, frHidePromptOnReplace]
+    Left = 709
+    Top = 400
   end
 end

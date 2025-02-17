@@ -1,0 +1,72 @@
+object Form1: TForm1
+  Left = 402
+  Height = 591
+  Top = 129
+  Width = 769
+  Caption = 'blocoDeNotasF'
+  ClientHeight = 591
+  ClientWidth = 769
+  Menu = MainMenu1
+  LCLVersion = '3.8.0.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 591
+    Top = 0
+    Width = 769
+    Align = alClient
+    TabOrder = 0
+  end
+  object MainMenu1: TMainMenu
+    Left = 712
+    Top = 16
+    object menuArq: TMenuItem
+      Caption = 'Arquivo'
+      object menuNovo: TMenuItem
+        Caption = 'Novo'
+        OnClick = menuNovoClick
+      end
+      object menuAbrir: TMenuItem
+        Caption = 'Abrir'
+        OnClick = menuAbrirClick
+      end
+      object menuSalvar: TMenuItem
+        Caption = 'Salvar'
+        OnClick = menuSalvarClick
+      end
+      object menuImprimir: TMenuItem
+        Caption = 'Imprimir'
+      end
+    end
+    object menuEditar: TMenuItem
+      Caption = 'Editar'
+      object menuLocalizar: TMenuItem
+        Caption = 'Localizar'
+        OnClick = menuLocalizarClick
+      end
+      object menuSubstituir: TMenuItem
+        Caption = 'Substituir'
+      end
+      object menuFormatF: TMenuItem
+        Caption = 'Formatar Fontes'
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 715
+    Top = 79
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 720
+    Top = 141
+  end
+  object PageSetupDialog1: TPageSetupDialog
+    Left = 721
+    Top = 201
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Left = 720
+    Top = 266
+  end
+end
